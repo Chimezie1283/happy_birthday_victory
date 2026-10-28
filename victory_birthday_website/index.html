@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d6336c" />
+    <title>Happy 24th Birthday, Victory ❤️</title>
+    <style>
+      :root {
+        --rose: #d6336c;
+        --deep-rose: #9d174d;
+        --blush: #fff0f5;
+        --cream: #fffafc;
+        --ink: #4a1830;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 192, 203, 0.55),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 182, 193, 0.45),
+            transparent 30%
+          ),
+          linear-gradient(135deg, #fff8fb, #ffe4ed);
+        overflow-x: hidden;
+      }
+
+      .hearts-layer {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .floating-heart {
+        position: absolute;
+        bottom: -50px;
+        color: rgba(214, 51, 108, 0.35);
+        animation: floatUp linear forwards;
+        user-select: none;
+      }
+
+      @keyframes floatUp {
+        from {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+        12% {
+          opacity: 1;
+        }
+        to {
+          transform: translateY(-115vh) rotate(25deg);
+          opacity: 0;
+        }
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+        width: min(920px, calc(100% - 28px));
+        margin: 0 auto;
+        padding: 38px 0 28px;
+      }
+
+      .card {
+        text-align: center;
+        padding: clamp(26px, 6vw, 64px);
+        border: 1px solid rgba(214, 51, 108, 0.18);
+        border-radius: 28px;
+        background: rgba(255, 250, 252, 0.88);
+        box-shadow: 0 20px 60px rgba(157, 23, 77, 0.12);
+        backdrop-filter: blur(8px);
+        animation: fadeIn 0.9s ease both;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .top-heart {
+        font-size: clamp(42px, 8vw, 68px);
+        display: inline-block;
+        animation: heartbeat 1.5s ease-in-out infinite;
+        filter: drop-shadow(0 5px 10px rgba(214, 51, 108, 0.2));
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        14% {
+          transform: scale(1.13);
+        }
+        28% {
+          transform: scale(1);
+        }
+        42% {
+          transform: scale(1.09);
+        }
+        70% {
+          transform: scale(1);
+        }
+      }
+
+      .eyebrow {
+        margin: 15px 0 8px;
+        color: var(--rose);
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font:
+          700 0.78rem/1.5 Arial,
+          sans-serif;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--deep-rose);
+        font-size: clamp(2.4rem, 7vw, 5rem);
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+      }
+
+      .age {
+        margin: 20px auto 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        color: white;
+        background: linear-gradient(145deg, #f06595, #c2255c);
+        font:
+          700 2rem Arial,
+          sans-serif;
+        box-shadow: 0 8px 22px rgba(194, 37, 92, 0.25);
+      }
+
+      .date {
+        margin: 10px 0 30px;
+        color: #92506a;
+        font:
+          600 1rem Arial,
+          sans-serif;
+        letter-spacing: 0.04em;
+      }
+
+      .divider {
+        width: 100px;
+        height: 2px;
+        margin: 26px auto;
+        background: linear-gradient(90deg, transparent, #e64980, transparent);
+      }
+
+      .message {
+        max-width: 690px;
+        margin: 0 auto;
+        font-size: clamp(1.05rem, 2.3vw, 1.23rem);
+        line-height: 1.9;
+      }
+
+      .message p {
+        margin: 0 0 18px;
+      }
+      .message strong {
+        color: var(--deep-rose);
+      }
+
+      .signature {
+        margin-top: 28px;
+        color: var(--deep-rose);
+        font-size: 1.5rem;
+        font-style: italic;
+      }
+
+      button {
+        border: 0;
+        border-radius: 999px;
+        padding: 15px 24px;
+        margin: 24px 7px 0;
+        background: var(--rose);
+        color: #fff;
+        font:
+          700 0.98rem Arial,
+          sans-serif;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(214, 51, 108, 0.22);
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        background: var(--deep-rose);
+        box-shadow: 0 11px 24px rgba(214, 51, 108, 0.3);
+      }
+
+      button:focus-visible {
+        outline: 3px solid #f783ac;
+        outline-offset: 4px;
+      }
+
+      #secretMessage {
+        max-width: 640px;
+        margin: 24px auto 0;
+        padding: 20px 22px;
+        border-radius: 18px;
+        background: #fff0f6;
+        border: 1px solid #fcc2d7;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        animation: fadeIn 0.5s ease both;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 22px 10px 0;
+        color: #92506a;
+        font:
+          0.9rem Arial,
+          sans-serif;
+      }
+
+      .sparkle {
+        display: inline-block;
+        animation: twinkle 1.8s ease-in-out infinite alternate;
+      }
+
+      @keyframes twinkle {
+        from {
+          opacity: 0.45;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1.12);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+
+    <main>
+      <section class="card" aria-labelledby="birthdayTitle">
+        <div class="top-heart" aria-hidden="true">❤️</div>
+        <p class="eyebrow">
+          <span class="sparkle">✨</span> A special day for someone special
+          <span class="sparkle">✨</span>
+        </p>
+        <h1 id="birthdayTitle">Happy Birthday,<br />Victory!</h1>
+        <div class="age" aria-label="24 years old">24</div>
+        <p class="date">28 OCTOBER 2026</p>
+
+        <div class="divider"></div>
+
+        <div class="message">
+          <p>To my beautiful <strong>Victory Unwanuyen Ogbija</strong>,</p>
+
+          <p>
+            Happy 24th birthday, my love! ❤️ Today, I celebrate not only the day
+            you were born, but also the beautiful soul who has made my life
+            brighter in so many ways.
+          </p>
+
+          <p>
+            For the past three years, you have brought so much joy, warmth,
+            laughter, and love into my world. You have encouraged me, given me
+            beautiful memories to hold close, and reminded me how special it
+            feels to have someone who means so much to your heart. My life is
+            better because you are in it, and I will never take that gift for
+            granted.
+          </p>
+
+          <p>
+            You are beautiful in ways that go far beyond your lovely face and
+            your unforgettable smile. Your heart, your spirit, your kindness,
+            and all the little things that make you <em>you</em> are what make
+            you truly extraordinary. If you could see yourself through my eyes,
+            even for a moment, I hope you would understand just how precious you
+            are to me. 🥹💕
+          </p>
+
+          <p>
+            As you begin this new chapter, I pray that life brings you peace,
+            good health, favour, exciting opportunities, answered prayers, and
+            countless reasons to smile. May you keep growing into the amazing
+            woman you are meant to be, and may you always feel appreciated,
+            supported, cherished, and deeply loved.
+          </p>
+
+          <p>
+            I look forward to making more memories with you, celebrating your
+            wins, standing beside you through challenges, and finding new
+            reasons to fall in love with you. I cannot promise every day will be
+            perfect, but I can promise that you are important to me and that I
+            will keep learning how to love you better.
+          </p>
+
+          <p>
+            <strong>Thank you for being you, my sunshine.</strong> Three years
+            with you have given me so many reasons to be grateful, and I hope
+            the years ahead bring us even more beautiful moments together.
+          </p>
+
+          <p>
+            Happy birthday, my queen. May your 24th year be as lovely as your
+            smile and as wonderful as the love you bring into my life. Never
+            forget how special you are to me.
+          </p>
+        </div>
+
+        <p class="signature">With all my love, today and always. 💋</p>
+
+        <button
+          id="surpriseButton"
+          type="button"
+          aria-expanded="false"
+          aria-controls="secretMessage"
+        >
+          Open Your Little Love Note 💌
+        </button>
+
+        <div id="secretMessage" hidden>
+          <strong>One more thing, my Victory… ❤️</strong><br />
+          If I had to choose all over again, I would still choose you. In every
+          season, in every new beginning, and in every version of tomorrow, I
+          hope I get to keep cheering for you, loving you, and reminding you
+          that you are one of the sweetest parts of my life. Happy 24th, my
+          baby! 🎂💖
+        </div>
+
+        <button id="celebrateButton" type="button">Celebrate You! 🎉</button>
+      </section>
+
+      <p class="footer">
+        Made with love, especially for Victory Unwanuyen Ogbija ❤️
+      </p>
+    </main>
+
+    <script>
+      const heartsLayer = document.getElementById("heartsLayer");
+      const surpriseButton = document.getElementById("surpriseButton");
+      const secretMessage = document.getElementById("secretMessage");
+      const celebrateButton = document.getElementById("celebrateButton");
+
+      function createHeart() {
+        const heart = document.createElement("span");
+        heart.className = "floating-heart";
+        heart.textContent = ["♥", "♡", "❤", "💕"][
+          Math.floor(Math.random() * 4)
+        ];
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.fontSize = 16 + Math.random() * 24 + "px";
+        heart.style.animationDuration = 7 + Math.random() * 7 + "s";
+        heartsLayer.appendChild(heart);
+        heart.addEventListener("animationend", () => heart.remove());
+      }
+
+      // A gentle stream of floating hearts in the background.
+      for (let i = 0; i < 12; i++) {
+        setTimeout(createHeart, i * 350);
+      }
+      setInterval(createHeart, 850);
+
+      surpriseButton.addEventListener("click", () => {
+        const isHidden = secretMessage.hidden;
+        secretMessage.hidden = !isHidden;
+        surpriseButton.setAttribute("aria-expanded", String(isHidden));
+        surpriseButton.textContent = isHidden
+          ? "Close Love Note 💌"
+          : "Open Your Little Love Note 💌";
+        if (isHidden) {
+          secretMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+          });
+        }
+      });
+
+      celebrateButton.addEventListener("click", () => {
+        for (let i = 0; i < 28; i++) {
+          setTimeout(createHeart, i * 65);
+        }
+        celebrateButton.textContent = "You Deserve All the Love! ❤️";
+        setTimeout(() => {
+          celebrateButton.textContent = "Celebrate You! 🎉";
+        }, 2400);
+      });
+    </script>
+  </body>
+</html>
